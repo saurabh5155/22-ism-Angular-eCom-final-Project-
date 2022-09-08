@@ -1,0 +1,77 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-xl-12"></div>
+                            <div class="col-md-12">
+                                <div class="authincation-content">
+                                    <div class="row no-gutters">
+
+                                        <h4 class="text-center mb-4">Profile</h4>
+
+                                        <div class="auth-form">
+                                            <form (ngSubmit)="updateUser()" [formGroup]="updateUserForm">                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="mb-3">
+                                                            <label class="mb-1"><strong>First Name</strong></label>
+                                                            <input type="text" class="form-control" 
+                                                            formControlName="firstName" value="{{data.firstName}}">
+                                                        </div>
+                                                        
+                                                        <div class="mb-3">
+                                                            <label class="mb-1"><strong>Email</strong></label>
+                                                            <input type="email" class="form-control" 
+                                                            formControlName="email" value="{{data.email}}">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label class="mb-1"><strong>Mobail Number</strong></label>
+                                                            <input type="number" class="form-control" 
+                                                            formControlName="email" value="{{data.mNumber}}">
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="col-xl-6">
+                                                        <div class="mb-3">
+                                                            <label class="mb-1"><strong>Last Name</strong></label>
+                                                            <input type="text" class="form-control" 
+                                                            formControlName="lastName" value="{{data.lastName}}">
+                                                        </div>
+                                                        
+                                                        <div>
+                                                        <div>
+                                                            <label for="staticEmail" class="col-sm- col-form-label">Gender:</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" value="male" formControlName="gender" name="gender"   [attr.checked]="data.gender === 'male' ? 'checked' : null" >
+                                                            <label for="staticEmail" class="col-sm- col-form-label">Male</label>
+                                                        </div>
+                                                        <div>
+                                                            <input type="radio" value="female" formControlName="gender" name="gender" [attr.checked]="data.gender === 'female' ? 'checked' : null">
+                                                            <label for="staticEmail" class="col-sm- col-form-label">Female</label>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                </div>
+                                                
+                                                <div class="text-center">
+                                                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

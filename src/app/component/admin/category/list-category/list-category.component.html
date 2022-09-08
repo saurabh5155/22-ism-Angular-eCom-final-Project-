@@ -1,0 +1,101 @@
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-xl-12"></div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Basic Datatable</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <div id="example_wrapper" class="dataTables_wrapper">
+                                                <div class="dataTables_length" id="example_length"><label>Show <select
+                                                            name="example_length" aria-controls="example" class="">
+                                                            <option value="10">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select> entries</label></div>
+                                                <div id="example_filter" class="dataTables_filter"><label>Search:<input
+                                                            type="search" class="" placeholder=""
+                                                            aria-controls="example"></label></div>
+                                                <table id="example" class="display dataTable" style="min-width: 845px"
+                                                    role="grid" aria-describedby="example_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0" aria-controls="example"
+                                                                rowspan="1" colspan="1" aria-sort="ascending"
+                                                                aria-label="Name: activate to sort column descending"
+                                                                style="width: 151.336px;">Id</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Position: activate to sort column ascending"
+                                                                style="width: 235.82px;">Category Name</th>
+                                                            <th class="sorting" tabindex="0" aria-controls="example"
+                                                                rowspan="1" colspan="1"
+                                                                aria-label="Salary: activate to sort column ascending"
+                                                                style="width: 85.7344px;">Action</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd" *ngFor="let c of category">
+                                                            <td>{{c.categoryId}}</td>
+                                                            <td>{{c.categoryName}}</td>
+                                                            <td> <button class="badge light badge-danger" (click)="deleteCategorybyId(c.categoryId)"><i class="fa fa-trash"></i></button>
+                                                                ||    <a class="badge light badge-warning" routerLink="/homeAdmin/updateCategory/{{c.categoryId}}"><i class="fas fa-pencil-alt"></i></a>
+                                                            </td>
+
+
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th rowspan="1" colspan="1">Id</th>
+                                                            <th rowspan="1" colspan="1">Category Name</th>
+                                                            <th rowspan="1" colspan="1">Action</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                                <div class="dataTables_info" id="example_info" role="status"
+                                                    aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                                                <div class="dataTables_paginate paging_simple_numbers"
+                                                    id="example_paginate"><a class="paginate_button previous disabled"
+                                                        aria-controls="example" data-dt-idx="0" tabindex="0"
+                                                        id="example_previous"><i class="fa fa-angle-double-left"
+                                                            aria-hidden="true"></i></a><span><a
+                                                            class="paginate_button current" aria-controls="example"
+                                                            data-dt-idx="1" tabindex="0">1</a><a
+                                                            class="paginate_button " aria-controls="example"
+                                                            data-dt-idx="2" tabindex="0">2</a><a
+                                                            class="paginate_button " aria-controls="example"
+                                                            data-dt-idx="3" tabindex="0">3</a><a
+                                                            class="paginate_button " aria-controls="example"
+                                                            data-dt-idx="4" tabindex="0">4</a><a
+                                                            class="paginate_button " aria-controls="example"
+                                                            data-dt-idx="5" tabindex="0">5</a><a
+                                                            class="paginate_button " aria-controls="example"
+                                                            data-dt-idx="6" tabindex="0">6</a></span><a
+                                                        class="paginate_button next" aria-controls="example"
+                                                        data-dt-idx="7" tabindex="0" id="example_next"><i
+                                                            class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
