@@ -16,6 +16,10 @@ export class SessionService {
     return this.http.post(environment.url+"/signup",user);
   }
   
+  singupVendorApi(user:Users):Observable<any>{
+    return this.http.post(environment.url+"/signupVendor",user);
+  }
+
   loginApi(login:Login):Observable<any>{
     return this.http.post(environment.url+"/login",login);
   }

@@ -34,6 +34,14 @@ import { UpdateCategoryComponent } from './component/admin/category/update-categ
 import { AddsubCategoryComponent } from './component/admin/subCategory/addsub-category/addsub-category.component';
 import { ListSubcategoryComponent } from './component/admin/subCategory/list-subcategory/list-subcategory.component';
 import { UpdateSubcategoryComponent } from './component/admin/subCategory/update-subcategory/update-subcategory.component';
+import { HeaderVendorComponent } from './component/vendor/temp/header-vendor/header-vendor.component';
+import { SidebarVendorComponent } from './component/vendor/temp/sidebar-vendor/sidebar-vendor.component';
+import { HomeVendorComponent } from './component/vendor/temp/home-vendor/home-vendor.component';
+import { SignupVendorComponent } from './component/session/signup-vendor/signup-vendor.component';
+import { AddProductsComponent } from './component/vendor/add-products/add-products.component';
+import { ListProductComponent } from './component/User/products/list-product/list-product.component';
+import { CartComponent } from './component/User/cart/cart/cart.component';
+import { AddAddressComponent } from './component/User/add-address/add-address.component';
 
 
 @NgModule({
@@ -58,6 +66,14 @@ import { UpdateSubcategoryComponent } from './component/admin/subCategory/update
     AddsubCategoryComponent,
     ListSubcategoryComponent,
     UpdateSubcategoryComponent,
+    HeaderVendorComponent,
+    SidebarVendorComponent,
+    HomeVendorComponent,
+    SignupVendorComponent,
+    AddProductsComponent,
+    ListProductComponent,
+    CartComponent,
+    AddAddressComponent,
   ],
   imports: [
     BrowserModule,

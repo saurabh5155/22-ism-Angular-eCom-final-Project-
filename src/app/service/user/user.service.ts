@@ -15,7 +15,7 @@ export class UserService {
     return this.http.get(environment.url+"/users")
   }
   
-  getUserById(id:number):Observable<any>{
+  getUserById(id:any):Observable<any>{
     return this.http.get(environment.url+"/users/"+id)
   }
   

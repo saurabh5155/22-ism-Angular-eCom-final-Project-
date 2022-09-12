@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { SessionService } from 'src/app/service/session/session.service';
 import { TemporaryService } from 'src/app/service/temporary/temporary.service';
 
@@ -26,19 +25,31 @@ export class LoginComponent implements OnInit {
   login(){
     this.sessionService.loginApi(this.loginForm.value).subscribe(res=>{
       console.log(res);
-      sessionStorage.setItem("users",res.data)
-      localStorage.setItem("userId",res.data.userId)
-      localStorage.setItem("user",res.data.data)
-      console.log(res.data.roles.roleName);
+      sessionStorage.setItem("users",res)
+      localStorage.setItem("userId",res.userId)
+      let reviver = (res) ;
+      localStorage.setItem("user",res)
+      console.log(res.roles.roleName);
       
       this.temp.users=res.data
 
-      if(res.data.roles.roleName=='admin'){
+      if(res.roles.roleName=='admin'){
         this.router.navigateByUrl("/homeAdmin")
+        let userssss=JSON.stringify(localStorage.getItem("user"))
+        console.log(userssss);
+        let userss = JSON.parse(userssss)
+        console.log(userss);
+        console.log(userss.mNumber);
+
+        
       }else 
-      if(res.data.roles.roleName=='user'){
+      if(res.roles.roleName=='user'){
         this.router.navigateByUrl("/homeUser")
-      }else{
+      }else 
+      if(res.roles.roleName=='vendor'){
+        this.router.navigateByUrl("/homeVendor")
+      }
+      else{
         this.router.navigateByUrl("/signup")
       }
     },err=>{

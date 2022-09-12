@@ -13,13 +13,20 @@ import { LoginComponent } from './component/session/login/login.component';
 import { LogoutComponent } from './component/session/logout/logout.component';
 import { OnlyEmailVerifyComponent } from './component/session/only-email-verify/only-email-verify.component';
 import { OTPVerifyComponent } from './component/session/otpverify/otpverify.component';
+import { SignupVendorComponent } from './component/session/signup-vendor/signup-vendor.component';
 import { SignupComponent } from './component/session/signup/signup.component';
+import { AddAddressComponent } from './component/User/add-address/add-address.component';
+import { CartComponent } from './component/User/cart/cart/cart.component';
+import { ListProductComponent } from './component/User/products/list-product/list-product.component';
 import { HomeUserComponent } from './component/User/temp/home-user/home-user.component';
+import { AddProductsComponent } from './component/vendor/add-products/add-products.component';
+import { HomeVendorComponent } from './component/vendor/temp/home-vendor/home-vendor.component';
 
 const routes: Routes = [
   { component: SignupComponent, path: "signup" },
   { component: LoginComponent, path: "login" },
   { component: LoginComponent, path: "" },
+  { component: SignupVendorComponent, path: "signupVendor" },
   { component: LogoutComponent, path: "logout" },
   { component: OnlyEmailVerifyComponent, path: "onlyEmailVerify" },
   { component: OTPVerifyComponent, path: "otpVerify" },
@@ -37,7 +44,14 @@ const routes: Routes = [
   },
   {
     component: HomeUserComponent, path: "homeUser", children: [
-
+      {component:ListProductComponent,path:"listProduct"},
+      {component:CartComponent,path:"cart"},
+      {component:AddAddressComponent,path:"addAddress"}
+    ]
+  },
+  {
+    component:HomeVendorComponent,path:"homeVendor",children:[
+      {component:AddProductsComponent,path:"addProduct"}
     ]
   }
 ];
